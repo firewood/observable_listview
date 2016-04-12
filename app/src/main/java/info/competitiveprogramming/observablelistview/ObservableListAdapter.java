@@ -3,7 +3,6 @@ package info.competitiveprogramming.observablelistview;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableArrayList;
-import android.databinding.ObservableList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,29 +14,29 @@ public class ObservableListAdapter extends ArrayAdapter<SimpleMessage> {
 
     public ObservableListAdapter(Context context, ObservableArrayList<SimpleMessage> data) {
         super(context, R.layout.list_simple_message, data);
-        data.addOnListChangedCallback(new ObservableList.OnListChangedCallback<ObservableList<SimpleMessage>>() {
+        data.addOnListChangedCallback(new ObservableArrayList.OnListChangedCallback<ObservableArrayList<SimpleMessage>>() {
             @Override
-            public void onChanged(ObservableList<SimpleMessage> simpleMessages) {
+            public void onChanged(ObservableArrayList<SimpleMessage> simpleMessages) {
                 notifyDataSetChanged();
             }
 
             @Override
-            public void onItemRangeChanged(ObservableList<SimpleMessage> simpleMessages, int i, int i1) {
+            public void onItemRangeChanged(ObservableArrayList<SimpleMessage> simpleMessages, int i, int i1) {
                 notifyDataSetChanged();
             }
 
             @Override
-            public void onItemRangeInserted(ObservableList<SimpleMessage> simpleMessages, int i, int i1) {
+            public void onItemRangeInserted(ObservableArrayList<SimpleMessage> simpleMessages, int i, int i1) {
                 notifyDataSetChanged();
             }
 
             @Override
-            public void onItemRangeMoved(ObservableList<SimpleMessage> simpleMessages, int i, int i1, int i2) {
+            public void onItemRangeMoved(ObservableArrayList<SimpleMessage> simpleMessages, int i, int i1, int i2) {
                 notifyDataSetChanged();
             }
 
             @Override
-            public void onItemRangeRemoved(ObservableList<SimpleMessage> simpleMessages, int i, int i1) {
+            public void onItemRangeRemoved(ObservableArrayList<SimpleMessage> simpleMessages, int i, int i1) {
                 notifyDataSetChanged();
             }
         });
